@@ -34,10 +34,10 @@ const TextLink = styled(props => <Link {...props} />)`
     font-size: 1rem;
     opacity: .7;
 
-    ${TextLink}:hover {
+    :hover {
         opacity: 1;
     }
-`;
+`
 
 const IconLink = styled.a`
     margin-right: 1rem;
