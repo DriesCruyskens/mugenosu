@@ -1,0 +1,87 @@
+import React from 'react'
+import { Link } from 'gatsby'
+import Headroom from 'react-headroom'
+import styled from "styled-components"
+import instagramLogo from '../images/instagram-logo.svg'
+import githubLogo from '../images/github-logo.svg'
+
+const Nav = styled.nav`
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 50px 15px 50px;
+    background-color: white;
+`
+
+const LeftLinks = styled.div`
+    display: flex;
+    width: 33.33%
+`
+
+const CenterLinks = styled.div`
+    width: 33.33%
+    text-align:center;
+`
+
+const RightLinks = styled.div`
+    width: 33.33%;
+    text-align: right;
+`
+
+const TextLink = styled(props => <Link {...props} />)`
+    margin-left: 1rem;
+    color: black;
+    text-decoration: none;
+    font-size: 1rem;
+    opacity: .7;
+
+    ${TextLink}:hover {
+        opacity: 1;
+    }
+`;
+
+const IconLink = styled.a`
+    margin-right: 1rem;
+    display: flex;
+    align-items: center;
+`
+
+const Icon = styled.img`
+    width: 1rem;
+    opacity: .7;
+    padding: 0;
+    margin: 0;
+
+    ${IconLink}:hover & {
+        opacity: 1;
+      }
+`
+
+const Logo = styled(props => <Link {...props} />)`
+    color: black;
+    font-size: 1.3rem;
+    text-decoration: none;
+    font-family: 'Permanent Marker';
+`;
+
+export default props => (
+    <Headroom>
+        <Nav>
+            <LeftLinks>
+                <IconLink href="https://www.instagram.com/" target="_blank">
+                    <Icon src={githubLogo}/>
+                </IconLink>
+                <IconLink href="https://github.com/DriesCruyskens" target="_blank">
+                    <Icon src={instagramLogo}/>
+                </IconLink>
+            </LeftLinks>
+            { !props.hideLogo && 
+                <CenterLinks>
+                    <Logo to="/" className="logo">Naito</Logo>
+                </CenterLinks>
+            }
+            <RightLinks>
+                <TextLink to="/works/">Works</TextLink>
+            </RightLinks>
+        </Nav>
+    </Headroom>
+)
