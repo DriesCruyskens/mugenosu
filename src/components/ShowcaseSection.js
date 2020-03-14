@@ -15,6 +15,10 @@ const StyledSection = styled.section`
     @media (max-width: 500px) {
         flex-direction: column;
         justify-content: center;
+
+        :nth-child(even) {
+            flex-direction: column;
+        }
     }
 `
 
@@ -24,6 +28,7 @@ const ImgWrapper = styled.div`
 
     @media (max-width: 500px) {
         width: 100%;
+        margin-bottom: 30px;
     }
 `
 

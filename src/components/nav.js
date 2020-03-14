@@ -12,8 +12,8 @@ const Nav = styled.nav`
     padding: 15px 50px 15px 50px;
     background-color: white;
 
-    @media (max-width: 400px) {
-        padding: 15px;
+    @media (max-width: 500px) {
+        padding: 20px;
     }
 `
 
@@ -23,7 +23,7 @@ const LeftLinks = styled.div`
 `
 
 const CenterLinks = styled.div`
-    width: 33.33%
+    width: 33.33%;
     text-align:center;
 `
 
