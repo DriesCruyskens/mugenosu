@@ -69,6 +69,7 @@ const Logo = styled(props => <Link {...props} />)`
     font-size: 1.5em;
     text-decoration: none;
     font-family: 'Permanent Marker';
+    white-space: nowrap;
 `;
 
 export default props => {
