@@ -23,6 +23,9 @@ const CenterLinks = styled.div`
 `
 
 const RightLinks = styled.div`
+    display: flex;
+    align-items:center;
+    flex-direction: row-reverse;
     width: 33.33%;
     text-align: right;
 `
@@ -31,7 +34,7 @@ const TextLink = styled(props => <Link {...props} />)`
     margin-left: 1rem;
     color: black;
     text-decoration: none;
-    font-size: 1rem;
+    font-size: .9rem;
     opacity: .7;
 
     :hover {
@@ -58,7 +61,7 @@ const Icon = styled.img`
 
 const Logo = styled(props => <Link {...props} />)`
     color: black;
-    font-size: 1.3rem;
+    font-size: 1.5em;
     text-decoration: none;
     font-family: 'Permanent Marker';
 `;
@@ -67,18 +70,16 @@ export default props => (
     <Headroom>
         <Nav>
             <LeftLinks>
-                <IconLink href="https://www.instagram.com/" target="_blank">
+                <IconLink href="https://github.com/DriesCruyskens" target="_blank">
                     <Icon src={githubLogo}/>
                 </IconLink>
-                <IconLink href="https://github.com/DriesCruyskens" target="_blank">
+                <IconLink href="https://www.instagram.com/" target="_blank">
                     <Icon src={instagramLogo}/>
                 </IconLink>
             </LeftLinks>
-            { !props.hideLogo && 
                 <CenterLinks>
                     <Logo to="/" className="logo">Naito</Logo>
                 </CenterLinks>
-            }
             <RightLinks>
                 <TextLink to="/works/">Works</TextLink>
             </RightLinks>

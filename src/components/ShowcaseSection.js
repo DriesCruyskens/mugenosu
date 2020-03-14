@@ -4,21 +4,44 @@ import styled from 'styled-components'
 const StyledSection = styled.section`
     min-height: 100vh;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    align-items:center;
 `
 
 const ImgWrapper = styled.div`
-    width: 40%;
+    width: 60%;
+`
+
+const ContentWrapper = styled.div`
+    max-width: 40%;
 `
 
 const Img = styled.img`
 
 `
 
-export default props => (
-    <StyledSection>
-        <ImgWrapper>
-            <Img src="https://images.unsplash.com/photo-1558979158-65a1eaa08691?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3900&q=80"></Img>
-        </ImgWrapper>
-    </StyledSection>
-)
+const Title = styled.h2`
+    font-family: 'Permanent Marker';
+`
+
+const Content = styled.p`
+
+`
+
+export default props => {
+    if (props.isMain) {
+        Title.withComponent('h1')
+    }
+
+    return (
+        <StyledSection>
+            <ImgWrapper>
+                <Img src={props.img}></Img>
+            </ImgWrapper>
+            <ContentWrapper>
+                {props.title && <Title>{props.title}</Title>}
+                {props.content && <Content> {props.content} </Content>}
+            </ContentWrapper>
+        </StyledSection>
+    )
+}
