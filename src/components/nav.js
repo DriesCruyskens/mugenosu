@@ -4,6 +4,7 @@ import Headroom from 'react-headroom'
 import styled from "styled-components"
 import instagramLogo from '../images/instagram-logo.svg'
 import githubLogo from '../images/github-logo.svg'
+import { useStaticQuery } from 'gatsby'
 
 const Nav = styled.nav`
     display: flex;
@@ -70,23 +71,37 @@ const Logo = styled(props => <Link {...props} />)`
     font-family: 'Permanent Marker';
 `;
 
-export default props => (
-    <Headroom>
-        <Nav>
-            <LeftLinks>
-                <IconLink href="https://github.com/DriesCruyskens" target="_blank">
-                    <Icon src={githubLogo}/>
-                </IconLink>
-                <IconLink href="https://www.instagram.com/" target="_blank">
-                    <Icon src={instagramLogo}/>
-                </IconLink>
-            </LeftLinks>
-                <CenterLinks>
-                    <Logo to="/" className="logo">Naito</Logo>
-                </CenterLinks>
-            <RightLinks>
-                <TextLink to="/works/">Works</TextLink>
-            </RightLinks>
-        </Nav>
-    </Headroom>
-)
+export default props => {
+    const data = useStaticQuery(
+        graphql`
+          query {
+            site {
+              siteMetadata {
+                title
+              }
+            }
+          }
+        `
+      )
+    return (
+        <Headroom>
+            <Nav>
+                <LeftLinks>
+                    <IconLink href="https://github.com/DriesCruyskens" target="_blank">
+                        <Icon src={githubLogo}/>
+                    </IconLink>
+                    <IconLink href="https://www.instagram.com/" target="_blank">
+                        <Icon src={instagramLogo}/>
+                    </IconLink>
+                </LeftLinks>
+                    <CenterLinks>
+                        <Logo to="/" className="logo">{data.site.siteMetadata.title}</Logo>
+                    </CenterLinks>
+                <RightLinks>
+                    <TextLink to="/works/">Works</TextLink>
+                </RightLinks>
+            </Nav>
+        </Headroom>
+    )
+    
+}

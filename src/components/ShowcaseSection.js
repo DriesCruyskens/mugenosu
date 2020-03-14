@@ -7,17 +7,22 @@ const StyledSection = styled.section`
     display: flex;
     justify-content: space-between;
     align-items:center;
+
+    :nth-child(even) {
+        flex-direction: row-reverse;
+    }
     
-    @media (max-width: 400px) {
+    @media (max-width: 500px) {
         flex-direction: column;
         justify-content: center;
     }
 `
 
 const ImgWrapper = styled.div`
-    width: 60%;
+    width: 50%;
+    text-align: center;
 
-    @media (max-width: 400px) {
+    @media (max-width: 500px) {
         width: 100%;
     }
 `
@@ -25,17 +30,21 @@ const ImgWrapper = styled.div`
 const ContentWrapper = styled.div`
     width: 40%;
 
-    @media (max-width: 400px) {
+    @media (max-width: 500px) {
         width: 100%;
     }
 `
 
 const Img = styled.img`
-
+    max-height: 400px;
 `
 
 const Title = styled.h2`
     font-family: 'Permanent Marker';
+
+    @media (max-width: 500px) {
+        text-align: center;
+    }
 `
 
 const Content = styled.p`
@@ -47,6 +56,7 @@ export default props => {
         Title.withComponent('h1')
     }
 
+    // getting all svg to find a match with the one in the markdown file
     const data = useStaticQuery(graphql`
         {
         allFile(filter: { extension: { glob: "svg|png|jpg" } }) {
@@ -59,7 +69,7 @@ export default props => {
         }
         }
     `)
-    
+
     const publicURL = data.allFile.edges.filter(x => {
         return props.img == x.node.base
     })[0].node.publicURL
