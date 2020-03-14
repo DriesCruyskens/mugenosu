@@ -12,7 +12,7 @@ const IndexPage = props => {
       <SEO title="Home" />
   
       <ShowcaseSection 
-        content="Generative sketches using code and pen plotters. Every sketch is solely made out of lines or dots and outputs a unique graphic that can never be generated again."
+        content="Generative drawings using code and pen plotters. Every sketch is solely made out of lines or dots and outputs a unique graphic that can never be generated the same way again."
         img="main.svg"
         isMain={true}
       />
