@@ -10,6 +10,10 @@ const Nav = styled.nav`
     justify-content: space-between;
     padding: 15px 50px 15px 50px;
     background-color: white;
+
+    @media (max-width: 400px) {
+        padding: 15px;
+    }
 `
 
 const LeftLinks = styled.div`

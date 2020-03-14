@@ -2,18 +2,31 @@ import React from 'react'
 import styled from 'styled-components'
 
 const StyledSection = styled.section`
-    min-height: 100vh;
+    min-height: 90vh;
     display: flex;
     justify-content: space-between;
     align-items:center;
+    
+    @media (max-width: 400px) {
+        flex-direction: column;
+        justify-content: center;
+    }
 `
 
 const ImgWrapper = styled.div`
     width: 60%;
+
+    @media (max-width: 400px) {
+        width: 100%;
+    }
 `
 
 const ContentWrapper = styled.div`
-    max-width: 40%;
+    width: 40%;
+
+    @media (max-width: 400px) {
+        width: 100%;
+    }
 `
 
 const Img = styled.img`
