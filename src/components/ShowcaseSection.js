@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { useStaticQuery } from 'gatsby'
 
 const StyledSection = styled.section`
     min-height: 90vh;
@@ -46,10 +47,28 @@ export default props => {
         Title.withComponent('h1')
     }
 
+    const data = useStaticQuery(graphql`
+        {
+        allFile(filter: { extension: { glob: "svg|png|jpg" } }) {
+            edges {
+            node {
+                publicURL
+                base
+            }
+            }
+        }
+        }
+    `)
+    
+    const publicURL = data.allFile.edges.filter(x => {
+        return props.img == x.node.base
+    })[0].node.publicURL
+    console.log(publicURL)
+
     return (
         <StyledSection>
             <ImgWrapper>
-                <Img src={props.img}></Img>
+                <Img src={publicURL}></Img>
             </ImgWrapper>
             <ContentWrapper>
                 {props.title && <Title>{props.title}</Title>}
