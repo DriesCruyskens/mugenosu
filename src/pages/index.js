@@ -2,7 +2,7 @@ import React from "react"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import ShowcaseSection from "../components/ShowcaseSection"
+import ShowcaseSection from "../components/showcaseSection"
 import { graphql } from 'gatsby'
 
 const IndexPage = props => {
