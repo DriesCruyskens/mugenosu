@@ -35,6 +35,7 @@ const Layout = props => {
       >
         <main>{props.children}</main>
         <footer style={{
+          margin: "50px",
           fontSize: '.7rem',
           textAlign: 'center'
         }}>

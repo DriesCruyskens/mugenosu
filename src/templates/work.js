@@ -8,7 +8,7 @@ const post = props.data.markdownRemark
 console.log(post)
   return (
     <Layout>
-        <SEO title="placeholder"/>
+        <SEO title={post.frontmatter.title}/>
       <div>Hello blog post</div>
     </Layout>
   )

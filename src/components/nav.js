@@ -89,10 +89,10 @@ export default props => {
             <Nav>
                 <LeftLinks>
                     <IconLink href="https://github.com/DriesCruyskens" target="_blank">
-                        <Icon src={githubLogo}/>
+                        <Icon src={githubLogo} alt="github logo" rel="noopener noreferrer"/>
                     </IconLink>
                     <IconLink href="https://www.instagram.com/" target="_blank">
-                        <Icon src={instagramLogo}/>
+                        <Icon src={instagramLogo} alt="instagram logo" rel="noopener noreferrer"/>
                     </IconLink>
                 </LeftLinks>
                     <CenterLinks>
