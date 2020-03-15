@@ -4,7 +4,7 @@ import Headroom from 'react-headroom'
 import styled from "styled-components"
 import instagramLogo from '../images/instagram-logo.svg'
 import githubLogo from '../images/github-logo.svg'
-import { useStaticQuery } from 'gatsby'
+import { useStaticQuery, graphql } from 'gatsby'
 
 const Nav = styled.nav`
     display: flex;

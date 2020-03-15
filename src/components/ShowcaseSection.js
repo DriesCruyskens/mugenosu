@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import { useStaticQuery } from 'gatsby'
+import { useStaticQuery, graphql } from 'gatsby'
+import Image from './mainImage'
 
 const StyledSection = styled.section`
     min-height: 90vh;
@@ -45,7 +46,7 @@ const Img = styled.img`
 `
 
 const Title = styled.h2`
-    font-family: 'Permanent Marker';
+    font-family: 'Open Sans';
 
     @media (max-width: 500px) {
         text-align: center;
@@ -76,14 +77,18 @@ export default props => {
     `)
 
     const publicURL = data.allFile.edges.filter(x => {
-        return props.img == x.node.base
+        return props.img === x.node.base
     })[0].node.publicURL
-    console.log(publicURL)
 
     return (
         <StyledSection>
             <ImgWrapper>
-                <Img src={publicURL}></Img>
+            { !props.isMain &&
+                    <Img src={publicURL}></Img> }
+
+            { props.isMain &&
+                    <Image/> }
+                
             </ImgWrapper>
             <ContentWrapper>
                 {props.title && <Title>{props.title}</Title>}

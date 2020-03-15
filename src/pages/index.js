@@ -1,10 +1,9 @@
 import React from "react"
-import { Link } from "gatsby"
 
 import Layout from "../components/layout"
-import Image from "../components/image"
 import SEO from "../components/seo"
 import ShowcaseSection from "../components/ShowcaseSection"
+import { graphql } from 'gatsby'
 
 const IndexPage = props => {
   return (
@@ -13,12 +12,13 @@ const IndexPage = props => {
   
       <ShowcaseSection 
         content="Generative drawings using code and pen plotters. Every sketch is solely made out of lines or dots and outputs a unique graphic that can never be generated the same way again."
-        img="main.svg"
+        img="main.png"
         isMain={true}
       />
       {props.data.allMarkdownRemark.edges.map(({ node }) => {
         return (
         <ShowcaseSection 
+          key={node.id}
           title={node.frontmatter.title}
           content={node.frontmatter.description}
           img={node.frontmatter.image.base}
