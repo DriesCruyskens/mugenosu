@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { useStaticQuery, graphql } from 'gatsby'
-import Image from './mainImage'
+import MainImage from './mainImage'
 
 const StyledSection = styled.section`
     min-height: 90vh;
@@ -87,7 +87,7 @@ export default props => {
                     <Img src={publicURL}></Img> }
 
             { props.isMain &&
-                    <Image/> }
+                    <MainImage/> }
                 
             </ImgWrapper>
             <ContentWrapper>
