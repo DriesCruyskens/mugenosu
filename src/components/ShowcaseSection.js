@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { useStaticQuery, graphql } from 'gatsby'
+import { Link, useStaticQuery, graphql } from 'gatsby'
 import MainImage from './mainImage'
 
 const StyledSection = styled.section`
@@ -35,9 +35,12 @@ const ImgWrapper = styled.div`
 
 const ContentWrapper = styled.div`
     width: 40%;
+    display:flex;
+    flex-direction: column;
 
     @media (max-width: 500px) {
         width: 100%;
+        align-items: center;
     }
 `
 
@@ -57,6 +60,16 @@ const Content = styled.p`
 
 `
 
+const TextLink = styled(props => <Link {...props} />)`
+    text-decoration: none;
+    color: black;
+    opacity: .8;
+
+    :hover {
+        text-decoration: underline;
+    }
+`
+
 export default props => {
     if (props.isMain) {
         Title.withComponent('h1')
@@ -65,7 +78,7 @@ export default props => {
     // getting all svg to find a match with the one in the markdown file
     const data = useStaticQuery(graphql`
         {
-        allFile(filter: { extension: { glob: "svg|png|jpg" } }) {
+        allFile(filter: { extension: { glob: "png" } }) {
             edges {
             node {
                 publicURL
@@ -83,16 +96,13 @@ export default props => {
     return (
         <StyledSection>
             <ImgWrapper>
-            { !props.isMain &&
-                    <Img src={publicURL}></Img> }
-
-            { props.isMain &&
-                    <MainImage/> }
-                
+                { !props.isMain && <Img src={publicURL}></Img> }
+                { props.isMain && <MainImage/> }
             </ImgWrapper>
             <ContentWrapper>
                 {props.title && <Title>{props.title}</Title>}
                 {props.content && <Content> {props.content} </Content>}
+                {props.slug && <TextLink to={props.slug}>Read more</TextLink>}
             </ContentWrapper>
         </StyledSection>
     )

@@ -22,6 +22,7 @@ const IndexPage = props => {
           title={node.frontmatter.title}
           content={node.frontmatter.description}
           img={node.frontmatter.image.base}
+          slug={node.fields.slug}
         />)
       })}
     </Layout>
@@ -30,7 +31,7 @@ const IndexPage = props => {
 
 export const query = graphql`
   query {
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMarkdownRemark(sort: {fields: [frontmatter___date], order: DESC}) {
       edges {
         node {
           frontmatter {
@@ -40,6 +41,9 @@ export const query = graphql`
               base
             }
             date(formatString: "YYYY-MM-DD")
+          }
+          fields {
+            slug
           }
         }
       }
