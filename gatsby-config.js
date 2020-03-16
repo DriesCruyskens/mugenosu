@@ -3,10 +3,26 @@ module.exports = {
     title: `Mugenosu`,
     description: `Generative drawings`,
     author: `@driescruyskens`,
+    siteUrl: 'https://mugenosu.xyz'
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
-    `gatsby-transformer-remark`,
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 800,
+              showCaption: true,
+              tracedSVG: true,
+            },
+          },
+        ],
+      },
+    },
+    'gatsby-plugin-sitemap',
     'gatsby-plugin-optimize-svgs',
     {
       resolve: `gatsby-source-filesystem`,
