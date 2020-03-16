@@ -99,7 +99,7 @@ export default props => {
                         <Logo to="/" className="logo">{data.site.siteMetadata.title}</Logo>
                     </CenterLinks>
                 <RightLinks>
-                    <TextLink to="/works/">Works</TextLink>
+                    {/* <TextLink to="/works/">Works</TextLink> */}
                 </RightLinks>
             </Nav>
         </Headroom>
