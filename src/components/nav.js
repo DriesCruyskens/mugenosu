@@ -55,7 +55,7 @@ const IconLink = styled.a`
 
 const Icon = styled.img`
     width: 1rem;
-    opacity: .7;
+    opacity: .5;
     padding: 0;
     margin: 0;
 
