@@ -54,7 +54,7 @@ const StyledImg = styled(props => <Img {...props} />)`
 `
 
 const Title = styled.h2`
-    font-family: 'Open Sans';
+    font-family: 'ABeeZee';
 
     @media (max-width: 500px) {
         text-align: center;
