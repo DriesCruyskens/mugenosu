@@ -4,7 +4,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image';
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { Link } from 'gatsby'
 import MainImage from '../components/mainImage'
 
@@ -65,14 +65,23 @@ const Content = styled.p`
 
 `
 
-const TextLink = styled(props => <Link {...props} />)`
-    text-decoration: none;
-    color: black;
-    opacity: .8;
+const linkStyles = css`
+  text-decoration: none;
+  color: black;
+  opacity: .8;
+  margin-bottom: 1rem;
 
-    :hover {
-        text-decoration: underline;
-    }
+  :hover {
+      text-decoration: underline;
+  }
+`;
+
+const TextLink = styled(props => <Link {...props} />)`
+  ${linkStyles}
+`
+
+const StyledA = styled.a`
+  ${linkStyles}
 `
 
 const Date = styled.p`
@@ -102,6 +111,7 @@ const ShowcaseSection = props => {
               {props.date && <Date>{props.date}</Date>}
               {props.content && <Content> {props.content} </Content>}
               {props.slug && <TextLink to={props.slug}>Read more</TextLink>}
+              {props.url && <StyledA href={props.url} target="_blank" rel="noopener noreferrer">Try it out</StyledA>}
           </ContentWrapper>
       </StyledSection>
   )
@@ -118,7 +128,7 @@ const IndexPage = props => {
           a unique graphic that can never be generated the same way again.
           This site is mainly used for posting more information on how certain
           sketches work. Most of them are available to test out in the browser although
-          I made no attempts to make them performant or easy to use. For fellow programmers
+          I made few attempts to make them performant or easy to use. For fellow programmers
           the source code for sketches and this website is also made 
           publicly available on Github."
         img="main.png"
@@ -131,6 +141,7 @@ const IndexPage = props => {
           title={node.frontmatter.title}
           date={node.frontmatter.date}
           content={node.frontmatter.description}
+          url={node.frontmatter.url}
           img={node.frontmatter.image.base}
           fluid={node.frontmatter.image.childImageSharp.fluid}
           slug={node.html != "" ? node.fields.slug : null} // only render button if there is markdown text
@@ -150,6 +161,7 @@ export const query = graphql`
           frontmatter {
             title
             description
+            url
             image {
               childImageSharp {
                 fluid(maxWidth: 600) {

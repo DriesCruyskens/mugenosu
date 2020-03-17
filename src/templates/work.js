@@ -48,6 +48,17 @@ const Content = styled.section`
       margin: auto;
 `
 
+const StyledA = styled.a`
+  text-decoration: none;
+  color: black;
+  opacity: .8;
+  margin-bottom: 1.45rem;
+
+  :hover {
+      text-decoration: underline;
+  }
+`
+
 export default props => {
 const post = props.data.markdownRemark
 console.log(post)
@@ -62,9 +73,18 @@ console.log(post)
           <HeroTitle>
             {post.frontmatter.title}
           </HeroTitle>
-          <IconLink href={post.frontmatter.github} target="_blank">
+          {post.frontmatter.url && 
+            <StyledA 
+              href={post.frontmatter.url} 
+              target="_blank" 
+              rel="noopener noreferrer">Try it out
+              </StyledA>
+          }
+          { post.frontmatter.github &&
+            <IconLink href={post.frontmatter.github} target="_blank">
               <Icon src={githubLogo} alt="github logo" rel="noopener noreferrer"/>
-          </IconLink>
+            </IconLink>
+          }
         </HeroSection>
         <Content dangerouslySetInnerHTML={{ __html: post.html }}>
         </Content>
@@ -79,6 +99,7 @@ export const query = graphql`
       frontmatter {
         title
         github
+        url
         image {
           childImageSharp {
             fluid(maxWidth: 600) {
