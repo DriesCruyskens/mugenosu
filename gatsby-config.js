@@ -19,6 +19,14 @@ module.exports = {
               tracedSVG: true,
             },
           },
+          {
+            resolve: 'gatsby-remark-instagram-embed',
+            options: {
+              width: 320,
+              height: 320,
+            },
+          },
+          `gatsby-remark-responsive-iframe`,
         ],
       },
     },
