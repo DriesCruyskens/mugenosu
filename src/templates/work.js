@@ -55,7 +55,10 @@ console.log(post)
     <Layout>
         <SEO title={post.frontmatter.title}/>
         <HeroSection>
-          <HeroImg fluid={post.frontmatter.image.childImageSharp.fluid}/>
+          <HeroImg 
+            fluid={post.frontmatter.image.childImageSharp.fluid}
+            loading="eager"
+            />
           <HeroTitle>
             {post.frontmatter.title}
           </HeroTitle>

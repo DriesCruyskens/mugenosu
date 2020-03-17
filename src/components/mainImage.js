@@ -29,6 +29,7 @@ const MainImage = () => {
   return <Img 
     fluid={data.mainImage.childImageSharp.fluid} 
     alt="main image"
+    loading="eager"
     />
 }
 
