@@ -75,11 +75,17 @@ const TextLink = styled(props => <Link {...props} />)`
     }
 `
 
+const Date = styled.p`
+    font-size: .7rem;
+    opacity: .7;
+    margin-bottom: 1.5rem;
+`
+
 const ShowcaseSection = props => {
   if (props.isMain) {
     Title.withComponent('h1')
   }
-
+  console.log(props)
   return (
       <StyledSection>
           <ImgWrapper>
@@ -93,6 +99,7 @@ const ShowcaseSection = props => {
           </ImgWrapper>
           <ContentWrapper>
               {props.title && <Title>{props.title}</Title>}
+              {props.date && <Date>{props.date}</Date>}
               {props.content && <Content> {props.content} </Content>}
               {props.slug && <TextLink to={props.slug}>Read more</TextLink>}
           </ContentWrapper>
@@ -106,7 +113,14 @@ const IndexPage = props => {
       <SEO title="Home" />
   
       <ShowcaseSection 
-        content="Generative drawings using code and pen plotters. Every sketch is solely made out of lines or dots and outputs a unique graphic that can never be generated the same way again."
+        content="Generative drawings using code and pen plotters. 
+          Every sketch is solely made out of lines or dots and outputs 
+          a unique graphic that can never be generated the same way again.
+          This site is mainly used for posting more information on how certain
+          sketches work. Most of them are available to test out in the browser although
+          I made no attempts to make them performant or easy to use. For fellow programmers
+          the source code for sketches and this website is also made 
+          publicly available on Github."
         img="main.png"
         isMain={true}
       />
@@ -115,10 +129,11 @@ const IndexPage = props => {
         <ShowcaseSection 
           key={node.id}
           title={node.frontmatter.title}
+          date={node.frontmatter.date}
           content={node.frontmatter.description}
           img={node.frontmatter.image.base}
           fluid={node.frontmatter.image.childImageSharp.fluid}
-          slug={node.fields.slug}
+          slug={node.html != "" ? node.fields.slug : null} // only render button if there is markdown text
         />)
       })}
     </Layout>
@@ -131,6 +146,7 @@ export const query = graphql`
     allMarkdownRemark(sort: {fields: [frontmatter___date], order: DESC}) {
       edges {
         node {
+          html
           frontmatter {
             title
             description

@@ -91,7 +91,7 @@ export default props => {
                     <IconLink href="https://github.com/DriesCruyskens" target="_blank">
                         <Icon src={githubLogo} alt="github logo" rel="noopener noreferrer"/>
                     </IconLink>
-                    <IconLink href="https://www.instagram.com/" target="_blank">
+                    <IconLink href="https://www.instagram.com/mugenosu" target="_blank">
                         <Icon src={instagramLogo} alt="instagram logo" rel="noopener noreferrer"/>
                     </IconLink>
                 </LeftLinks>
