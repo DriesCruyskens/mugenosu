@@ -47,6 +47,6 @@ You can see the unoptimized and optimized plotting paths on these two pictures (
 
 ![penplotter path optimized](./blade optimized.png "penplotter path optimized")
 
-I also had to take into account the dot size, because a dot is actually a small circle. When using a small enough pen you can actually see these circles:
+I also had to take into account the dot size, because a dot is really a small circle. When using a small enough pen you can actually see these circles:
 
 ![blade circles closup](./IMG_20200318_114540.jpg "circles instead of dots")

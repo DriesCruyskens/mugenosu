@@ -123,7 +123,7 @@ const IndexPage = props => {
       <ShowcaseSection 
         content="Generative drawings using code and pen plotters. 
           Every sketch is solely made out of lines or dots and outputs 
-          a unique graphic that can never be generated the same way again.
+          a unique graphic that can never be generated the same way again. 
           This site is mainly used for posting more information on the process of making
           these sketches. Most of them are available to test out in the browser although it must
           be said they are pretty messy and I made few attempts to make them 
