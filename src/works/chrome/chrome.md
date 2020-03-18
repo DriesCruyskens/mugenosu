@@ -7,4 +7,29 @@ github: "https://github.com/DriesCruyskens/chrome"
 url: "https://chrome-sandy.now.sh"
 ---
 
+This drawing is the product of a number of different techniques and consists of the following:
+
+1. A single line spiraling outwards. The spiral actually only has three vertices per 360° (in most of the drawings) but looks pretty round because of path smoothing.
+2. These path vertices have a variable amount of smoothing applied to them, depending on the distance from the circle's origin.
+3. There is an angle offset on these vertices depending on their distance from the circle's origin. This makes the corners look like they are spiraling outward, espacially those with a smaller smoothing factor.
+4. The coordinates of these vertices are then offset using OpenSimplexNoise. Causing more bumps and waves to appear.
+5. This whole graphic is dan duplicated and its coordinates offset a small amount to get the moiré patterns.
+
+This video shows the drawing of the first spiral:
+
 ![instagram](B91SNufJ2CG)
+
+The drawing of the second spiral, together with the moiré patterns, can be seen on the video in this post:
+
+![instagram](B91gA32JtEh)
+
+One of the first versions of this sketch consisted of a number of seperate circles or polygons. The pen touches and leaves the paper to draw each individual circle and caused a dark line to appear: 
+
+![chrome line](./line.jpg "visible darker line where pen moves up and down")
+
+![chrome line closeup](./line closeup.jpg "visible darker line where pen moves up and down")
+
+I didn't really know how to solve this one for a while without losing the variable amount of path smoothing. Luckily, after reading through paperjs' documentation I found out its possible to change the path smoothing of individual path segments.
+
+
+

@@ -8,9 +8,42 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
+import { createGlobalStyle } from 'styled-components'
 
 import Nav from "./nav"
 import "./layout.css"
+
+const GlobalStyle = createGlobalStyle`
+  body {
+    font-family: "ABeeZee";
+    font-size: 1rem;
+    color: black;
+    opacity: .8;
+  }
+
+  .headroom {
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+  }
+  .headroom--unfixed {
+    position: relative;
+    transform: translateY(0);
+  }
+  .headroom--scrolled {
+    transition: transform 200ms ease-in-out;
+    box-shadow: 1px 1px 5px rgb(182, 182, 182);
+  }
+  .headroom--unpinned {
+    position: fixed;
+    transform: translateY(-100%);
+  }
+  .headroom--pinned {
+    position: fixed;
+    transform: translateY(0%);
+  }
+`
 
 const Layout = props => {
   const data = useStaticQuery(graphql`
@@ -25,6 +58,7 @@ const Layout = props => {
 
   return (
     <>
+      <GlobalStyle></GlobalStyle>
       <Nav hideLogo={props.hideLogo}/>
       <div
         style={{

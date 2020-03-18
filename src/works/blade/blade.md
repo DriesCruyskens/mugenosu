@@ -37,14 +37,16 @@ Plotting tens of thousands of little points will take a long time and probably m
 
 The first issue is that points overlap so that plotting time is wasted drawing multiple times over the same spot. Another consequence is the accumulation of ink which causes soaked and wavy paper. If you use a gel pen, gel accumulation can cause the pen to get clogged. This problem was solved by a simple check: only draw a new dot if there is no other dot already there. To save on computation time I implemented this using a quadtree although it must be said that this technique, together with the smaller amount of dots, makes the digital sketch less attractive.
 
+![blade teal on black](./IMG_20200318_114812.jpg "teal on black")
+
 A second issue is that plotting happens in the same order the dots are drawn, so the space between dots is very large. This causes for a lot of wasted time moving the pen between dots. After realizing 2D sorting is more difficult than anticipated. I came up with the following solution that is executed once on exportation: start with the point p where p.x * p.y is lowest. This gets you a point in a corner. Next, iterate all points and mark the closest one as the next point. Keep doing this for the remaining points and it will yield you a set of points with an increasing amount of space between them. This effectively cut my plotting time from 1 hour and 30 minutes to 45 minutes.
 
-You can see the unoptimized and optimized plotting paths on these two pictures (blue is pen DOWN, red is pen UP, amount of dots has been drastically reduced):
+You can see the unoptimized and optimized plotting paths on these two pictures (blue is pen DOWN, red is pen UP, amount of dots has been drastically reduced for demonstration purposes):
 
 ![penplotter path not optimized](./blade non optimized.png "penplotter path not optimized")
 
 ![penplotter path optimized](./blade optimized.png "penplotter path optimized")
 
-I also had to take into account the dot size, because a dot is actually a really small circle. When using a small enough pen you can actually see this circle:
+I also had to take into account the dot size, because a dot is actually a small circle. When using a small enough pen you can actually see these circles:
 
-The best results is on black paper with a light gel pen.
+![blade circles closup](./IMG_20200318_114540.jpg "circles instead of dots")

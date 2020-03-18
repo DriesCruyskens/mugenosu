@@ -46,6 +46,7 @@ const ContentWrapper = styled.div`
     @media (max-width: 500px) {
         width: 100%;
         align-items: center;
+        margin-bottom: 50px;
     }
 `
 
@@ -54,8 +55,6 @@ const StyledImg = styled(props => <Img {...props} />)`
 `
 
 const Title = styled.h2`
-    font-family: 'ABeeZee';
-
     @media (max-width: 500px) {
         text-align: center;
     }
@@ -100,7 +99,6 @@ const ShowcaseSection = props => {
           <ImgWrapper>
               { !props.isMain && props.fluid && 
                 <StyledImg 
-                  style={{}}
                   imgStyle={{objectFit: "contain"}} 
                   fluid={props.fluid} 
                   alt={props.title + " image"}/> }
@@ -126,9 +124,10 @@ const IndexPage = props => {
         content="Generative drawings using code and pen plotters. 
           Every sketch is solely made out of lines or dots and outputs 
           a unique graphic that can never be generated the same way again.
-          This site is mainly used for posting more information on how certain
-          sketches work. Most of them are available to test out in the browser although
-          I made few attempts to make them performant or easy to use. For fellow programmers
+          This site is mainly used for posting more information on the process of making
+          these sketches. Most of them are available to test out in the browser although it must
+          be said they are pretty messy and I made few attempts to make them 
+          performant or easy to use. For fellow programmers
           the source code for sketches and this website is also made 
           publicly available on Github."
         img="main.png"
