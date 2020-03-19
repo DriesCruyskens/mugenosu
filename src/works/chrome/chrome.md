@@ -1,7 +1,7 @@
 ---
 title: "Chrome"
 date: "2019-12-24"
-description: "This mangled chrome disk is obtained by displacing a spiral in 2D space, varying the amount of path smoothing and finally duplicating it with a small offset to get the Moiré patterns."
+description: "This mangled chrome disk is obtained by displacing a spiral in 2D space, varying the amount of path smoothing and finally duplicating it with a small offset to get the moiré patterns."
 image: "./chrome.png"
 github: "https://github.com/DriesCruyskens/chrome"
 url: "https://chrome-sandy.now.sh"
@@ -29,7 +29,7 @@ One of the first versions of this sketch consisted of a number of seperate circl
 
 ![chrome line closeup](./line closeup.jpg "visible darker line where pen moves up and down")
 
-I didn't really know how to solve this one for a while without losing the variable amount of path smoothing. Luckily, after reading through paperjs' documentation I found out its possible to change the path smoothing of individual path segments.
+I didn't really know how to solve this one for a while without losing the variable amount of path smoothing. After reading through paperjs' documentation I found out its possible to change the path smoothing of individual path segments and thus enabling me to draw a single path while keeping the variable amount of smoothing.
 
 
 
