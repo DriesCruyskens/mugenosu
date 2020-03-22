@@ -34,6 +34,7 @@ module.exports = {
       },
     },
     `gatsby-plugin-react-helmet`,
+   "gatsby-remark-copy-linked-files",
     {
       resolve: `gatsby-transformer-remark`,
       options: {
