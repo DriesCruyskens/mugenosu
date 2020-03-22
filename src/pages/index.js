@@ -143,7 +143,7 @@ const IndexPage = props => {
           url={node.frontmatter.url}
           img={node.frontmatter.image.base}
           fluid={node.frontmatter.image.childImageSharp.fluid}
-          slug={node.html != "" ? node.fields.slug : null} // only render button if there is markdown text
+          slug={node.html !== "" ? node.fields.slug : null} // only render button if there is markdown text
         />)
       })}
     </Layout>
