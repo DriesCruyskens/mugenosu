@@ -21,6 +21,10 @@ const GlobalStyle = createGlobalStyle`
     opacity: .8;
   }
 
+  h1, h2 {
+    font-family: "ABeeZee";
+  }
+
   .headroom {
     top: 0;
     left: 0;

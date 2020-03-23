@@ -24,7 +24,7 @@ const HeroImg = styled(props => <Img {...props}/>)`
 `
 
 const HeroTitle = styled.h1`
-  font-family: "ABeeZee"
+  
 `
 
 const IconLink = styled.a`
