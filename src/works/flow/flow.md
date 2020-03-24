@@ -17,8 +17,8 @@ Here is one where streams are stopped when an intersection is detected:
 
 ![flow intersect](./flow-intersect.png "stream stops at intersect detection")
 
-As a solution to all this, I ended up using Paperjs' `hitTest` method which detects if a point hits a path, stroke width included. The point used is the most recent vertex of the path being drawn so I have to make sure to not use a step size that is too big. Notice how there is much less overlap than the previous two images:
+As a solution to all this, I ended up using Paperjs' `hitTest` method which detects if a point hits a path, stroke width included. The point used is the most recent vertex of the path being drawn so I have to make sure not to use a step size that is too big. Notice how there is much less overlap than the previous two images:
 
 ![flow hittest](./flow-hittest.png "stream stops at hittest detection")
 
-For digital screens this method is completely superfluous, and makes the graphic actually a little less atractive in my opinion. It is however very necessary when plotting it, especially using a fountain pen. Since plotting over the same spot a couple of times completely destroys the paper.
+For digital screens this method is completely superfluous, and makes the graphic actually a little less atractive in my opinion. It is however necessary when plotting it, especially using a fountain pen since plotting over the same spot a couple of times completely destroys the paper.
