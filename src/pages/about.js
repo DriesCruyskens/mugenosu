@@ -9,16 +9,18 @@ const Content = styled.section`
     justify-content: space-around;
     align-items: center;
 
-    padding: 200px 0;
+    padding: 100px 0;
 
     @media (max-width: 500px) {
-        padding: 100px 0;
+        padding: 10px 0;
         flex-direction: column;
     }
 `
 
 const H1 = styled.h1`
-
+    @media (max-width: 500px) {
+        margin: 40px 0 40px 0;
+    }
 `
 
 const About = styled.p`
@@ -38,8 +40,8 @@ export default props => {
             <Content>
                 <H1>About</H1>
                 <About>
-                    I'm a Brussels based programmer and technology enthousiast with a passion for generative art. 
-                    I became acquainted with Processing through my studies and quickly became interested in the concept of
+                    I'm a Brussels based programmer with a passion for generative art. 
+                    I came in contact with Processing through my studies and quickly became interested in the concept of
                     generating something visually attractive and unique each time a program is run.
                     
                     <br/><br/>
@@ -51,7 +53,8 @@ export default props => {
                     lines only.
 
                     <br/><br/>
-                    Currently I make most of my sketches using javascript as it is easier for me to develop and debug.
+                    Currently I make most of my sketches using javascript as it is easier for me to develop, debug and share
+                    sketches on the internet.
                     Starting out using P5js, I eventually switched to Paperjs for generating SVG files since I never 
                     quite got around getting the SVG export function in P5js to work with webpack.
                     I only ever switch back to Processing when more performance is needed.
