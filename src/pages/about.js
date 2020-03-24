@@ -38,7 +38,7 @@ export default props => {
             <Content>
                 <H1>About</H1>
                 <About>
-                    I'm a Brussels based developer with a passion for generative art.
+                    I'm a Brussels based web developer and technology enthousiast with a passion for generative art.
                     <br/><br/>
                     This site is mainly used for posting more information on the process of making
                     my sketches. Most of them are available to test out in the browser although it must
