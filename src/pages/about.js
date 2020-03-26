@@ -49,14 +49,14 @@ export default props => {
                     I discovered the vibrant community of pen plotters. It's a lot of fun
                     to be able to draw your artwork using fountain pens, markers or even paint brushes using scalable
                     vector graphics instead of having to rely on high resolution images and professional print shops.
-                    Because I often struggle with having too much options it's also very welcoming to being limited to generating
+                    Because I often struggle with having too much options it's also very welcoming to being limited to drawing
                     lines only.
 
                     <br/><br/>
-                    Currently I make most of my sketches using javascript as it is easier for me to develop, debug and share
-                    sketches on the internet.
-                    Starting out using P5js, I eventually switched to Paperjs for generating SVG files since I never 
-                    quite got around getting the SVG export function in P5js to work with webpack.
+                    Currently I make most of my sketches using javascript as it is easier for me to develop, 
+                    debug and share on the internet.
+                    Starting out using P5js, I eventually switched to Paperjs since I never 
+                    quite got the SVG export function in P5js to work with webpack.
                     I only ever switch back to Processing when more performance is needed.
 
                     <br/><br/>
