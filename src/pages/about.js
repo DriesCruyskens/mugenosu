@@ -56,7 +56,7 @@ export default props => {
                     Currently I make most of my sketches using javascript as it is easier for me to develop, 
                     debug and share on the internet.
                     Starting out using P5js, I eventually switched to Paperjs since I never 
-                    quite got the SVG export function in P5js to work with webpack.
+                    quite got the SVG export function in P5js to work with Webpack.
                     I only ever switch back to Processing when more performance is needed.
 
                     <br/><br/>
