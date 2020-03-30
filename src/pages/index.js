@@ -106,7 +106,7 @@ const ShowcaseSection = props => {
           </ImgWrapper>
           <ContentWrapper>
               {props.title && <Title>{props.title}</Title>}
-              {props.date && <Date>{props.date}</Date>}
+              {/* {props.date && <Date>{props.date}</Date>} */}
               {props.content && <Content> {props.content} </Content>}
               {props.slug && <TextLink to={props.slug}>Read more</TextLink>}
               {props.url && <StyledA href={props.url} target="_blank" rel="noopener noreferrer">Try it out</StyledA>}
