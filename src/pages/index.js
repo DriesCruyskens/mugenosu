@@ -93,7 +93,7 @@ const ShowcaseSection = props => {
   if (props.isMain) {
     Title.withComponent('h1')
   }
-  console.log(props)
+  
   return (
       <StyledSection>
           <ImgWrapper>
