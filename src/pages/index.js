@@ -140,6 +140,20 @@ const IndexPage = props => {
           slug={node.html !== "" ? node.fields.slug : null} // only render button if there is markdown text
         />)
       })}
+      
+      <script dangerouslySetInnerHTML={{ __html: `
+        if (window.netlifyIdentity) {
+          window.netlifyIdentity.on("init", user => {
+            if (!user) {
+              window.netlifyIdentity.on("login", () => {
+                document.location.href = "/admin/";
+              });
+            }
+          });
+        }
+      ` }}>
+        
+      </script>
     </Layout>
   )
 }
