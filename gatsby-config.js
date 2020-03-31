@@ -91,7 +91,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `works`,
-        path: `${__dirname}/static`,
+        path: `${__dirname}/static`, // necessary for images uploaded through netlify-cms
       },
     },
     `gatsby-transformer-sharp`,
