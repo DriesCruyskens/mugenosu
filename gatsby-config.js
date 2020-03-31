@@ -6,7 +6,12 @@ module.exports = {
     siteUrl: 'https://mugenosu.xyz'
   },
   plugins: [
-    `gatsby-plugin-netlify-cms-paths`,
+    {
+      resolve: `gatsby-plugin-netlify-cms-paths`,
+      options: {
+        cmsConfig: `/static/admin/config.yml`,
+      },
+    },
     {
       
       resolve: `gatsby-plugin-google-analytics`,
@@ -41,7 +46,12 @@ module.exports = {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
-          `gatsby-plugin-netlify-cms-paths`,
+          {
+            resolve: `gatsby-plugin-netlify-cms-paths`,
+            options: {
+              cmsConfig: `/static/admin/config.yml`,
+            },
+          },
           {
             resolve: `gatsby-remark-images`,
             options: {
