@@ -6,7 +6,9 @@ module.exports = {
     siteUrl: 'https://mugenosu.xyz'
   },
   plugins: [
+    `gatsby-plugin-netlify-cms-paths`,
     {
+      
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         // The property ID; the tracking code won't be generated without it
@@ -39,6 +41,7 @@ module.exports = {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
+          `gatsby-plugin-netlify-cms-paths`,
           {
             resolve: `gatsby-remark-images`,
             options: {
