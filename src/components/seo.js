@@ -73,6 +73,7 @@ function SEO({ description, lang, meta, title, siteUrl }) {
     >
 
     <link rel="canonical" href={site.siteMetadata.siteUrl} />
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     </Helmet>
   )
 }
