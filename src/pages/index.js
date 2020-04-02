@@ -141,7 +141,7 @@ const IndexPage = props => {
         />)
       })}
       
-      <script dangerouslySetInnerHTML={{ __html: `
+      <script async dangerouslySetInnerHTML={{ __html: `
         if (window.netlifyIdentity) {
           window.netlifyIdentity.on("init", user => {
             if (!user) {
