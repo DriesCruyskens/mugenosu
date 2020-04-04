@@ -61,7 +61,7 @@ const StyledA = styled.a`
 
 export default props => {
 const post = props.data.markdownRemark
-console.log(post)
+
   return (
     <Layout>
         <SEO title={post.frontmatter.title}/>
