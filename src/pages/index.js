@@ -90,9 +90,6 @@ const Date = styled.p`
 `
 
 const ShowcaseSection = props => {
-  if (props.isMain) {
-    Title.withComponent('h1')
-  }
   
   return (
       <StyledSection>
@@ -126,6 +123,7 @@ const IndexPage = props => {
           a unique graphic that can never be generated the same way again."
         img="main.png"
         isMain={true}
+        title='test'
       />
       {props.data.allMarkdownRemark.edges.map(({ node }) => {
         return (
