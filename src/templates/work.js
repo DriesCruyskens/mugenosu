@@ -65,14 +65,18 @@ const post = props.data.markdownRemark
   return (
     <Layout>
         <SEO title={post.frontmatter.title}/>
+
         <HeroSection>
+
           <HeroImg 
             fluid={post.frontmatter.image.childImageSharp.fluid}
             loading="eager"
             />
+
           <HeroTitle>
             {post.frontmatter.title}
           </HeroTitle>
+
           {post.frontmatter.url && 
             <StyledA 
               href={post.frontmatter.url} 
@@ -80,12 +84,17 @@ const post = props.data.markdownRemark
               rel="noopener noreferrer">Try it out
               </StyledA>
           }
+
           { post.frontmatter.github &&
             <IconLink href={post.frontmatter.github} target="_blank">
               <Icon src={githubLogo} alt="github logo" rel="noopener noreferrer"/>
             </IconLink>
           }
         </HeroSection>
+
+        {/* DangerouslySetInnerHTML is used because the post is sourced from Github
+            and thus exploitation is not straightforward.
+        */}
         <Content dangerouslySetInnerHTML={{ __html: post.html }}>
         </Content>
     </Layout>

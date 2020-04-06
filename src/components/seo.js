@@ -25,7 +25,7 @@ function SEO({ description, lang, meta, title, siteUrl }) {
       }
     `
   )
-  console.log(title, site.siteMetadata.siteUrl)
+
   const metaDescription = description || site.siteMetadata.description
 
   return (
@@ -73,6 +73,7 @@ function SEO({ description, lang, meta, title, siteUrl }) {
     >
 
     <link rel="canonical" href={site.siteMetadata.siteUrl} />
+    {/* Netlify-cms script that handles authentication through Netlify Identity */}
     <script async src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     </Helmet>
   )

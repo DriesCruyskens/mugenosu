@@ -104,5 +104,4 @@ export default props => {
             </Nav>
         </Headroom>
     )
-    
 }

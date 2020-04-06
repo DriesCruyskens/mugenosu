@@ -64,6 +64,11 @@ const Content = styled.p`
 
 `
 
+{/* Differentiating between an internal gastby link (Link component)
+    and the external 'try it out' Github link (normal <a> tag). As they
+    use the same styles this linkStyle variable contains the common 
+    css for both of them.
+*/}
 const linkStyles = css`
   text-decoration: none;
   color: black;
@@ -89,6 +94,12 @@ const Date = styled.p`
     margin-bottom: 1.5rem;
 `
 
+{/* ShowcaseSection is contains an image on one side and a title, text and optional links
+    to Github and/or 'read more' page on the other side. They alternate by reversing the
+    flex-direction on even sections.
+
+    A check for isMain is used to load the main image for the hero banner.
+*/}
 const ShowcaseSection = props => {
   
   return (
@@ -117,6 +128,10 @@ const IndexPage = props => {
     <Layout hideLogo="true">
       <SEO title="Home" />
   
+      {/* Using a single ShowcaseSection as the main (hero) banner. A check for isMain 
+          is used to load the main image for the hero banner instead. Passing this image here
+          does not work.
+      */}
       <ShowcaseSection 
         content="Generative drawings using code and pen plotters. 
           Every sketch is solely made out of lines or dots and outputs 
@@ -124,6 +139,8 @@ const IndexPage = props => {
         img="main.png"
         isMain={true}
       />
+      
+      {/* Iterating over all sketches and displaying them using multiple ShowcaseSectoins. */}
       {props.data.allMarkdownRemark.edges.map(({ node }) => {
         return (
         <ShowcaseSection 
@@ -138,6 +155,11 @@ const IndexPage = props => {
         />)
       })}
       
+      {/* Script provided by Netlify-cms that handles a redirect to Mugenosu's homepage
+          after a login attempt using Netlify Identity. It redirects to the /admin page.
+          This should ideally before the </body> tag but only being on the index page is 
+          enough for now.
+      */}
       <script async dangerouslySetInnerHTML={{ __html: `
         if (window.netlifyIdentity) {
           window.netlifyIdentity.on("init", user => {
