@@ -3,141 +3,19 @@ import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { graphql } from 'gatsby'
-import Img from 'gatsby-image';
-import styled, { css } from 'styled-components'
-import { Link } from 'gatsby'
-import MainImage from '../components/mainImage'
-
-const StyledSection = styled.section`
-    min-height: 90vh;
-    display: flex;
-    justify-content: space-between;
-    align-items:center;
-
-    :nth-child(even) {
-        flex-direction: row-reverse;
-    }
-    
-    @media (max-width: 500px) {
-        flex-direction: column;
-        justify-content: center;
-
-        :nth-child(even) {
-            flex-direction: column;
-        }
-    }
-`
-
-const ImgWrapper = styled.div`
-    width: 50%;
-    text-align: center;
-
-    @media (max-width: 500px) {
-        width: 100%;
-        margin-bottom: 30px;
-    }
-`
-
-const ContentWrapper = styled.div`
-    width: 40%;
-    display:flex;
-    flex-direction: column;
-
-    @media (max-width: 500px) {
-        width: 100%;
-        align-items: center;
-        margin-bottom: 50px;
-    }
-`
-
-const StyledImg = styled(props => <Img {...props} />)`
-    max-height: 400px;
-`
-
-const Title = styled.h2`
-    @media (max-width: 500px) {
-        text-align: center;
-    }
-`
-
-const Content = styled.p`
-
-`
-
-{/* Differentiating between an internal gastby link (Link component)
-    and the external 'try it out' Github link (normal <a> tag). As they
-    use the same styles this linkStyle variable contains the common 
-    css for both of them.
-*/}
-const linkStyles = css`
-  text-decoration: none;
-  color: black;
-  opacity: .8;
-  margin-bottom: 1rem;
-
-  :hover {
-      text-decoration: underline;
-  }
-`;
-
-const TextLink = styled(props => <Link {...props} />)`
-  ${linkStyles}
-`
-
-const StyledA = styled.a`
-  ${linkStyles}
-`
-
-const Date = styled.p`
-    font-size: .7rem;
-    opacity: .7;
-    margin-bottom: 1.5rem;
-`
-
-{/* ShowcaseSection is contains an image on one side and a title, text and optional links
-    to Github and/or 'read more' page on the other side. They alternate by reversing the
-    flex-direction on even sections.
-
-    A check for isMain is used to load the main image for the hero banner.
-*/}
-const ShowcaseSection = props => {
-  
-  return (
-      <StyledSection>
-          <ImgWrapper>
-              { !props.isMain && props.fluid && 
-                <StyledImg 
-                  imgStyle={{objectFit: "contain"}} 
-                  fluid={props.fluid} 
-                  alt={props.title + " image"}/> }
-              { props.isMain && <MainImage/> }
-          </ImgWrapper>
-          <ContentWrapper>
-              {props.title && <Title>{props.title}</Title>}
-              {/* {props.date && <Date>{props.date}</Date>} */}
-              {props.content && <Content> {props.content} </Content>}
-              {props.slug && <TextLink to={props.slug}>Read more</TextLink>}
-              {props.url && <StyledA href={props.url} target="_blank" rel="noopener noreferrer">Try it out</StyledA>}
-          </ContentWrapper>
-      </StyledSection>
-  )
-}
+import ShowcaseSection from "../components/showcaseSection"
+import Intro from "../components/intro"
 
 const IndexPage = props => {
   return (
     <Layout hideLogo="true">
       <SEO title="Home" />
-  
-      {/* Using a single ShowcaseSection as the main (hero) banner. A check for isMain 
-          is used to load the main image for the hero banner instead. Passing this image here
-          does not work.
-      */}
-      <ShowcaseSection 
-        content="Generative drawings using code and pen plotters. 
-          Every sketch is solely made out of lines or dots and outputs 
-          a unique graphic that can never be generated the same way again."
-        img="main.png"
-        isMain={true}
+
+      {/* The main intro banner */}
+      <Intro
+        title={props.data.intro.childPagesYaml.title}
+        content={props.data.intro.childPagesYaml.intro}
+        fluid={props.data.intro.childPagesYaml.image.childImageSharp.fluid}
       />
       
       {/* Iterating over all sketches and displaying them using multiple ShowcaseSectoins. */}
@@ -149,7 +27,6 @@ const IndexPage = props => {
           date={node.frontmatter.date}
           content={node.frontmatter.description}
           url={node.frontmatter.url}
-          img={node.frontmatter.image.base}
           fluid={node.frontmatter.image.childImageSharp.fluid}
           slug={node.html !== "" ? node.fields.slug : null} // only render button if there is markdown text
         />)
@@ -160,7 +37,7 @@ const IndexPage = props => {
           This should ideally before the </body> tag but only being on the index page is 
           enough for now.
       */}
-      <script async dangerouslySetInnerHTML={{ __html: `
+      <script async dangerouslySetInnerHTML={{__html: `
         if (window.netlifyIdentity) {
           window.netlifyIdentity.on("init", user => {
             if (!user) {
@@ -199,6 +76,20 @@ export const query = graphql`
           }
           fields {
             slug
+          }
+        }
+      }
+    }
+    intro: file(relativePath: {eq: "home.yml"}) {
+      relativePath
+      childPagesYaml {
+        intro
+        title
+        image {
+          childImageSharp {
+            fluid(maxWidth: 800) {
+              ...GatsbyImageSharpFluid_tracedSVG
+            }
           }
         }
       }

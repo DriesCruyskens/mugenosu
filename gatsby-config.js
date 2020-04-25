@@ -83,6 +83,13 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
+        name: `pages`,
+        path: `${__dirname}/src/content/pages`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
         name: `works`,
         path: `${__dirname}/src/content/works`,
       },
@@ -94,6 +101,7 @@ module.exports = {
         path: `${__dirname}/static`, // necessary for images uploaded through netlify-cms
       },
     },
+    `gatsby-transformer-yaml`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     'gatsby-plugin-favicon',
