@@ -25,7 +25,7 @@ const MainImage = () => {
       }
     }
   `)
-  console.log(data.mainImage.childImageSharp.fluid)
+  
   return <Img 
     fluid={data.mainImage.childImageSharp.fluid} 
     alt="main image"
