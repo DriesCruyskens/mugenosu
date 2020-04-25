@@ -28,10 +28,10 @@ collections:
           name: "home"
           file: "src/content/pages/home.yml"
           fields:
-            - {label: Title, name: title, widget: string}
-            - {label: Intro, name: intro, widget: markdown}
+            - {label: Title, name: title, widget: string, required: false}
+            - {label: Intro, name: intro, widget: markdown, required: false}
         - label: "About Page"
           name: "about"
           file: "src/content/pages/about.yml"
           fields:
-            - {label: About, name: about, widget: markdown}
+            - {label: About, name: about, widget: markdown, required: false}
