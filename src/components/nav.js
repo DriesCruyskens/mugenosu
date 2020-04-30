@@ -86,18 +86,16 @@ export default props => {
     <Headroom>
       <Nav>
         <LeftLinks>
-          <IconLink href="https://github.com/DriesCruyskens" target="_blank">
+          <IconLink href="https://github.com/DriesCruyskens" target="_blank" rel="noopener noreferrer">
             <Icon
               src={githubLogo}
               alt="github logo"
-              rel="noopener noreferrer"
             />
           </IconLink>
-          <IconLink href="https://www.instagram.com/mugenosu" target="_blank">
+          <IconLink href="https://www.instagram.com/mugenosu" target="_blank" rel="noopener noreferrer">
             <Icon
               src={instagramLogo}
               alt="instagram logo"
-              rel="noopener noreferrer"
             />
           </IconLink>
         </LeftLinks>
