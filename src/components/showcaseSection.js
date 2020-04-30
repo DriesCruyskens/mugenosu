@@ -17,7 +17,7 @@ const StyledSection = styled.section`
         flex-direction: column;
         justify-content: center;
         text-align: center;
-        margin-bottom: 50px;
+        margin-bottom: 70px;
 
         :nth-child(even) {
             flex-direction: column;
@@ -43,7 +43,6 @@ const ContentWrapper = styled.div`
     @media (max-width: 500px) {
         width: 100%;
         align-items: center;
-        margin-bottom: 50px;
     }
 `
 
