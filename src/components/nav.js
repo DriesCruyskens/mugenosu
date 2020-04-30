@@ -66,7 +66,7 @@ const Icon = styled.img`
 
 const Logo = styled.img`
   width: 8rem;
-  margin: .3rem 0;
+  margin: .5rem 0 .3rem 0;
 `
 
 export default () => {
