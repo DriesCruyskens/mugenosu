@@ -70,18 +70,7 @@ const Logo = styled.img`
   margin: .3rem 0;
 `
 
-export default props => {
-  const data = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-          }
-        }
-      }
-    `
-  )
+export default () => {
   return (
     <Headroom>
       <Nav>
