@@ -18,6 +18,9 @@ const StyledSection = styled.section`
         justify-content: center;
         text-align: center;
         margin-bottom: 70px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 80%;
 
         :nth-child(even) {
             flex-direction: column;
