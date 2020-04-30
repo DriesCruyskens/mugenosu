@@ -4,6 +4,7 @@ import Headroom from "react-headroom"
 import styled from "styled-components"
 import instagramLogo from "../images/instagram-logo.svg"
 import githubLogo from "../images/github-logo.svg"
+import mugenosuLogo from "../images/mugenosu.svg"
 import { useStaticQuery, graphql } from "gatsby"
 
 const Nav = styled.nav`
@@ -64,12 +65,9 @@ const Icon = styled.img`
   }
 `
 
-const Logo = styled(props => <Link {...props} />)`
-  color: black;
-  font-size: 1.5em;
-  text-decoration: none;
-  font-family: "Permanent Marker";
-  white-space: nowrap;
+const Logo = styled.img`
+  width: 8rem;
+  margin: .3rem 0;
 `
 
 export default props => {
@@ -104,9 +102,9 @@ export default props => {
           </IconLink>
         </LeftLinks>
         <CenterLinks>
-          <Logo to="/" className="logo">
-            {data.site.siteMetadata.title}
-          </Logo>
+          <Link to="/" className="logo">
+            <Logo src={mugenosuLogo} alt="Mugenosu Logo"/>
+          </Link>
         </CenterLinks>
         <RightLinks>
           <TextLink to="/about/">About</TextLink>

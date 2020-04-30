@@ -111,15 +111,5 @@ module.exports = {
         // Add any options here
       },
     },
-    {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
-      options: {
-        fonts: [
-          {
-            family: `Permanent Marker`,
-          },
-        ],
-      },
-    },
   ],
 }
