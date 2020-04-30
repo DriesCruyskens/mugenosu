@@ -7,7 +7,7 @@ const StyledSection = styled.section`
     min-height: 90vh;
     display: flex;
     justify-content: space-between;
-    align-items:center;
+    align-items: center;
 
     :nth-child(even) {
         flex-direction: row-reverse;
@@ -42,6 +42,7 @@ const ContentWrapper = styled.div`
     width: 40%;
     display:flex;
     flex-direction: column;
+    align-items: flex-start;
 
     @media (max-width: 500px) {
         width: 100%;
