@@ -16,14 +16,14 @@ import "./layout.css"
 
 const GlobalStyle = createGlobalStyle`
   body {
-    font-family: "ABeeZee";
+    font-family: system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     font-size: 1rem;
     color: black;
     opacity: .8;
   }
 
   h1, h2 {
-    font-family: "ABeeZee";
+    font-family: system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   }
 
   .headroom {

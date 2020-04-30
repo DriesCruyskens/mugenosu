@@ -118,9 +118,6 @@ module.exports = {
           {
             family: `Permanent Marker`,
           },
-          {
-            family: `ABeeZee`,
-          },
         ],
       },
     },
