@@ -8,7 +8,8 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle } from "styled-components"
+import styled, { css } from "styled-components"
 
 import Nav from "./nav"
 import "./layout.css"
@@ -49,6 +50,26 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 
+const StyledDiv = styled.div`
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 0 10%;
+
+  @media (max-width: 500px) {
+    padding: 0 3%;
+}
+`
+
+const StyledFooter = styled.footer`
+  margin: 50px;
+  font-size: .7rem;
+  text-align: center;
+
+  @media (max-width: 500px) {
+    padding: 0 3%;
+}
+`
+
 const Layout = props => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
@@ -63,23 +84,13 @@ const Layout = props => {
   return (
     <>
       <GlobalStyle></GlobalStyle>
-      <Nav hideLogo={props.hideLogo}/>
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 1200,
-          padding: `0 10%`,
-        }}
-      >
+      <Nav hideLogo={props.hideLogo} />
+      <StyledDiv>
         <main>{props.children}</main>
-        <footer style={{
-          margin: "50px",
-          fontSize: '.7rem',
-          textAlign: 'center'
-        }}>
+        <StyledFooter>
           © {new Date().getFullYear()} {data.site.siteMetadata.title}
-        </footer>
-      </div>
+        </StyledFooter>
+      </StyledDiv>
     </>
   )
 }
