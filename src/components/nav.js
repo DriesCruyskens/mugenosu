@@ -13,7 +13,7 @@ const Nav = styled.nav`
     background-color: white;
 
     @media (max-width: 500px) {
-        padding: 20px;
+        padding: 10px 20px;
     }
 `
 

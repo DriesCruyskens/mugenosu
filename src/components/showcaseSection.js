@@ -16,6 +16,8 @@ const StyledSection = styled.section`
     @media (max-width: 500px) {
         flex-direction: column;
         justify-content: center;
+        text-align: center;
+        margin-bottom: 50px;
 
         :nth-child(even) {
             flex-direction: column;
@@ -29,7 +31,7 @@ const ImgWrapper = styled.div`
 
     @media (max-width: 500px) {
         width: 100%;
-        margin-bottom: 30px;
+        margin-bottom: 50px;
     }
 `
 
@@ -52,6 +54,7 @@ const StyledImg = styled(props => <Img {...props} />)`
 const Title = styled.h2`
     @media (max-width: 500px) {
         text-align: center;
+        margin-bottom: 30px;
     }
 `
 
