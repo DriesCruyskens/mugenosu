@@ -5,7 +5,6 @@ import styled from "styled-components"
 import instagramLogo from "../images/instagram-logo.svg"
 import githubLogo from "../images/github-logo.svg"
 import mugenosuLogo from "../images/mugenosu.svg"
-import { useStaticQuery, graphql } from "gatsby"
 
 const Nav = styled.nav`
   display: flex;
