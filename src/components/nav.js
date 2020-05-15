@@ -89,7 +89,7 @@ export default () => {
         </LeftLinks>
         <CenterLinks>
           <Link to="/" className="logo">
-            <Logo src={mugenosuLogo} alt="Mugenosu Logo"/>
+            <Logo src={mugenosuLogo} alt="Mugenosu logo"/>
           </Link>
         </CenterLinks>
         <RightLinks>
