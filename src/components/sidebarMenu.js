@@ -72,7 +72,7 @@ export default class SidebarMenu extends React.Component {
                     />
                 </UnstyledButton>
 
-                <SideBar isOpen={this.state.isOpen}>
+                <SideBar isOpen={this.state && this.state.isOpen}>
                     <UnstyledButton onClick={this.toggleOpenClosed} aria-label="sidebar menu close button" tabIndex={this.state.isOpen ? "false" : "-1"}>
                         <CloseIcon
                             src={closeIcon}
@@ -84,7 +84,7 @@ export default class SidebarMenu extends React.Component {
             */
                         React.Children.map(React.Children.toArray(this.props.children), (child, index) => {
                             return React.cloneElement(child, {
-                                tabIndex: this.state.isOpen ? "false" : "-1",
+                                tabIndex: this.state && this.state.isOpen ? "false" : "-1",
                             });
                         })}
                 </SideBar>

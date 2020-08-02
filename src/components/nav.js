@@ -107,7 +107,7 @@ export default class Nav extends React.Component {
   }
 
   renderMenu() {
-    if (this.state.width < 500) {
+    if (this.state && this.state.width < 500) {
       return <SidebarMenu mobile={this.state.width < 500}>
         <SidebarLink to="/about/">About</SidebarLink>
         <SidebarLink to="/shop/">Shop</SidebarLink>
