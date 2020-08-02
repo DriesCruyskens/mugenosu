@@ -105,8 +105,8 @@ const Date = styled.p`
 const ShowcaseSection = props => {
   
     return (
-        <StyledSection>
-            <ImgWrapper>
+        <StyledSection className={props.className}>
+            <ImgWrapper> 
                 { props.fluid && 
                   <StyledImg 
                     imgStyle={{objectFit: "contain"}} 
