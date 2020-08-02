@@ -9,7 +9,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import { createGlobalStyle } from "styled-components"
-import styled, { css } from "styled-components"
+import styled from "styled-components"
 
 import Nav from "./nav"
 import "./layout.css"
@@ -50,7 +50,7 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 
-const StyledDiv = styled.div`
+const ContentWrapper = styled.div`
   margin: 0 auto;
   max-width: 1200px;
   padding: 0 10%;
@@ -85,12 +85,13 @@ const Layout = props => {
     <>
       <GlobalStyle></GlobalStyle>
       <Nav hideLogo={props.hideLogo} />
-      <StyledDiv>
+      <ContentWrapper>
+        {/* page-wrap id for react Menu component. */}
         <main>{props.children}</main>
         <StyledFooter>
           © {new Date().getFullYear()} {data.site.siteMetadata.title}
         </StyledFooter>
-      </StyledDiv>
+      </ContentWrapper>
     </>
   )
 }

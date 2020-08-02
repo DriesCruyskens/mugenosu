@@ -6,7 +6,7 @@ import instagramLogo from "../images/instagram-logo.svg"
 import githubLogo from "../images/github-logo.svg"
 import mugenosuLogo from "../images/mugenosu.svg"
 
-const Nav = styled.nav`
+const StyledNav = styled.nav`
   display: flex;
   justify-content: space-between;
   padding: 15px 50px 15px 50px;
@@ -30,7 +30,7 @@ const CenterLinks = styled.div`
 const RightLinks = styled.div`
   display: flex;
   align-items: center;
-  flex-direction: row-reverse;
+  justify-content: end;
   width: 33.33%;
   text-align: right;
 `
@@ -69,33 +69,36 @@ const Logo = styled.img`
   margin: .5rem 0 .3rem 0;
 `
 
-export default () => {
-  return (
-    <Headroom>
-      <Nav>
-        <LeftLinks>
-          <IconLink href="https://github.com/DriesCruyskens" target="_blank" rel="noopener noreferrer">
-            <Icon
-              src={githubLogo}
-              alt="github logo"
-            />
-          </IconLink>
-          <IconLink href="https://www.instagram.com/mugenosu" target="_blank" rel="noopener noreferrer">
-            <Icon
-              src={instagramLogo}
-              alt="instagram logo"
-            />
-          </IconLink>
-        </LeftLinks>
-        <CenterLinks>
-          <Link to="/" className="logo">
-            <Logo src={mugenosuLogo} alt="Mugenosu logo"/>
-          </Link>
-        </CenterLinks>
-        <RightLinks>
-          <TextLink to="/about/">About</TextLink>
-        </RightLinks>
-      </Nav>
-    </Headroom>
-  )
+export default class Nav extends React.Component {
+  render() {
+    return (
+      <Headroom>
+        <StyledNav>
+          <LeftLinks>
+            <IconLink href="https://github.com/DriesCruyskens" target="_blank" rel="noopener noreferrer">
+              <Icon
+                src={githubLogo}
+                alt="github logo"
+              />
+            </IconLink>
+            <IconLink href="https://www.instagram.com/mugenosu" target="_blank" rel="noopener noreferrer">
+              <Icon
+                src={instagramLogo}
+                alt="instagram logo"
+              />
+            </IconLink>
+          </LeftLinks>
+          <CenterLinks>
+            <Link to="/" className="logo">
+              <Logo src={mugenosuLogo} alt="Mugenosu logo" />
+            </Link>
+          </CenterLinks>
+          <RightLinks>
+            <TextLink to="/about/">About</TextLink>
+            <TextLink to="/shop/">Shop</TextLink>
+          </RightLinks>
+        </StyledNav>
+      </Headroom>
+    )
+  }
 }

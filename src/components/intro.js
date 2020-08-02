@@ -1,6 +1,6 @@
 import React from "react"
 import ShowcaseSection from "./showcaseSection"
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 
 const HeroWrapper = styled.div`
     height: 90vh;
