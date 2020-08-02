@@ -95,7 +95,6 @@ export default class Nav extends React.Component {
           </CenterLinks>
           <RightLinks>
             <TextLink to="/about/">About</TextLink>
-            <TextLink to="/shop/">Shop</TextLink>
           </RightLinks>
         </StyledNav>
       </Headroom>
