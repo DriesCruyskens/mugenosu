@@ -5,6 +5,7 @@ import styled from "styled-components"
 import instagramLogo from "../images/instagram-logo.svg"
 import githubLogo from "../images/github-logo.svg"
 import mugenosuLogo from "../images/mugenosu.svg"
+import SidebarMenu from "./sidebarMenu"
 
 const StyledNav = styled.nav`
   display: flex;
@@ -33,9 +34,10 @@ const RightLinks = styled.div`
   justify-content: end;
   width: 33.33%;
   text-align: right;
+  color: black;
 `
 
-const TextLink = styled(props => <Link {...props} />)`
+const NavLink = styled(props => <Link {...props} />)`
   margin-left: 1rem;
   color: black;
   text-decoration: none;
@@ -44,6 +46,21 @@ const TextLink = styled(props => <Link {...props} />)`
 
   :hover {
     opacity: 1;
+  }
+`
+
+const SidebarLink = styled(props => <Link {...props} />)`
+  font-weight: 600;
+  text-align: left;
+  display:block;
+  margin-left: 1rem;
+  margin-bottom: 1rem;
+  color: white;
+  text-decoration: none;
+  font-size: 2rem;
+
+  :hover {
+    opacity: 0.7;
   }
 `
 
@@ -70,6 +87,39 @@ const Logo = styled.img`
 `
 
 export default class Nav extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { width: 0 };
+    this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
+  }
+
+  componentDidMount() {
+    this.updateWindowDimensions();
+    window.addEventListener('resize', this.updateWindowDimensions);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.updateWindowDimensions);
+  }
+
+  updateWindowDimensions() {
+    this.setState({ width: window.innerWidth });
+  }
+
+  renderMenu() {
+    if (this.state.width < 500) {
+      return <SidebarMenu mobile={this.state.width < 500}>
+        <SidebarLink to="/about/">About</SidebarLink>
+        <SidebarLink to="/shop/">Shop</SidebarLink>
+      </SidebarMenu>
+    } else {
+      return <>
+        <NavLink to="/about/">About</NavLink>
+        <NavLink to="/shop/">Shop</NavLink>
+      </>
+    }
+  }
+
   render() {
     return (
       <Headroom>
@@ -94,7 +144,7 @@ export default class Nav extends React.Component {
             </Link>
           </CenterLinks>
           <RightLinks>
-            <TextLink to="/about/">About</TextLink>
+            {this.renderMenu()}
           </RightLinks>
         </StyledNav>
       </Headroom>

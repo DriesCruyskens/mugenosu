@@ -3,11 +3,8 @@ import ShowcaseSection from "./showcaseSection"
 import styled from 'styled-components'
 
 const HeroWrapper = styled.div`
-    height: 90vh;
+    min-height: 90vh;
     overflow: hidden;
-    display: flex; 
-    flex-direction: column;
-    justify-content: space-between;
     position: relative:
 `
 
