@@ -19,6 +19,7 @@ const CloseIcon = styled.img`
 
     &:hover {
         cursor: pointer;
+        opacity: 0.7;
     }
 `
 
