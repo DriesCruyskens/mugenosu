@@ -38,6 +38,7 @@ const UnstyledButton = styled.button`
 `
 
 const SideBar = styled.div`
+    z-index: 10;
     padding: 10px;
     position: absolute;
     width: 200px;
