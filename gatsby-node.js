@@ -20,7 +20,7 @@ exports.createPages = async ({ graphql, actions }) => {
     // see: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise for more info
     const result = await graphql(`
       query {
-        allMarkdownRemark {
+        allMarkdownRemark(filter: {fields: {sourceName: {eq: "works"}}}) {
           edges {
             node {
               fields {
