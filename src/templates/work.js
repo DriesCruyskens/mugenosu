@@ -103,7 +103,7 @@ const post = props.data.markdownRemark
 
 export const query = graphql`
   query($slug: String!) {
-    markdownRemark(fields: { slug: { eq: $slug } }) {
+    markdownRemark(fields: { slug: { eq: $slug }, sourceName: {eq: "works"}}) {
       html
       frontmatter {
         title
