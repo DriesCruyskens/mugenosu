@@ -14,7 +14,7 @@ const ShopPage = props => {
           <button className="snipcart-add-item"
           data-item-id={node.frontmatter.title}
           data-item-price={node.frontmatter.price}
-          data-item-url="/shop"
+          data-item-url="https://deploy-preview-32--condescending-neumann-452934.netlify.app/shop/"
           data-item-description={node.frontmatter.description}
           data-item-image={node.frontmatter.featured_image.childImageSharp.fluid.src}
           data-item-name={node.frontmatter.title}>
