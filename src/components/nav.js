@@ -5,6 +5,7 @@ import styled from "styled-components"
 import instagramLogo from "../images/instagram-logo.svg"
 import githubLogo from "../images/github-logo.svg"
 import mugenosuLogo from "../images/mugenosu.svg"
+import cartIcon from "../images/cart.svg"
 import SidebarMenu from "./sidebarMenu"
 
 const StyledNav = styled.nav`
@@ -86,6 +87,53 @@ const Logo = styled.img`
   margin: .5rem 0 .3rem 0;
 `
 
+const CartButton = styled.button`
+    background: transparent;
+    box-shadow: 0px 0px 0px transparent;
+    border: 0px solid transparent;
+    text-shadow: 0px 0px 0px transparent;
+    padding: 0;
+    position: relative;
+
+    &:hover {
+    background: transparent;
+    box-shadow: 0px 0px 0px transparent;
+    border: 0px solid transparent;
+    text-shadow: 0px 0px 0px transparent;
+    }
+`
+
+const CartIcon = styled.img`
+    width: 1rem;
+    opacity: 0.5;
+    padding: 0;
+    margin: 0;
+    padding-top: 5px;
+    margin-left: 1rem;
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    @media (max-width: 500px) {
+      padding-top: 0;
+    }
+`
+
+const CartItemCount = styled.span`
+    --size: .8rem;
+    position: absolute;
+    right: -25%;
+    top: 0;
+    background: red;
+    border-radius: 50%;
+    width: var(--size);
+    height: var(--size);
+    font-size: .6rem;
+    color: white;
+    font-weight: bold;
+`
+
 export default class Nav extends React.Component {
   constructor(props) {
     super(props);
@@ -145,6 +193,12 @@ export default class Nav extends React.Component {
           </CenterLinks>
           <RightLinks>
             {this.renderMenu()}
+            <CartButton className="snipcart-checkout" aria-label="open cart button">
+              <CartIcon
+                src={cartIcon}
+                alt="cart icon" />
+              <CartItemCount className="snipcart-items-count">0</CartItemCount>
+            </CartButton>
           </RightLinks>
         </StyledNav>
       </Headroom>

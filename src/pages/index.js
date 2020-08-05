@@ -57,7 +57,7 @@ const IndexPage = props => {
 // https://codebushi.com/gatsby-featured-images/
 export const query = graphql`
   query {
-    allMarkdownRemark(sort: {fields: [frontmatter___date], order: DESC}) {
+    allMarkdownRemark(filter: {fields: {sourceName: {eq: "works"}}}, sort: {fields: [frontmatter___date], order: DESC}) {
       edges {
         node {
           html

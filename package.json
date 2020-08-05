@@ -24,6 +24,7 @@
     "gatsby-remark-images": "^3.1.50",
     "gatsby-remark-instagram-embed": "^1.0.0",
     "gatsby-remark-responsive-iframe": "^2.2.34",
+    "gatsby-remark-source-name": "^1.0.0",
     "gatsby-source-filesystem": "^2.1.46",
     "gatsby-transformer-remark": "^2.6.58",
     "gatsby-transformer-sharp": "^2.3.13",
