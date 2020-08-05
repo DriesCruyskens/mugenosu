@@ -54,14 +54,24 @@ const ContentWrapper = styled.div`
   margin: 0 auto;
   max-width: 1200px;
   padding: 0 10%;
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
   @media (max-width: 500px) {
     padding: 0 3%;
 }
 `
 
+const Wrapper = styled.div`
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+`
+
 const StyledFooter = styled.footer`
-  margin: 50px;
+  margin: 50px 0 10px 0;
   font-size: .7rem;
   text-align: center;
 
@@ -82,9 +92,9 @@ const Layout = props => {
   `)
 
   return (
-    <>
+    <Wrapper>
       <GlobalStyle></GlobalStyle>
-      <Nav hideLogo={props.hideLogo} />
+      <Nav/>
       <ContentWrapper>
         {/* page-wrap id for react Menu component. */}
         <main>{props.children}</main>
@@ -92,7 +102,7 @@ const Layout = props => {
           © {new Date().getFullYear()} {data.site.siteMetadata.title}
         </StyledFooter>
       </ContentWrapper>
-    </>
+    </Wrapper>
   )
 }
 
