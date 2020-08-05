@@ -16,7 +16,7 @@ collections:
       fields:
         - {label: "Title", name: "title", widget: "string"}
         - {label: "Publish Date", name: "date", widget: "datetime", required: false}
-        - {label: "Price", name: "price", widget: "number",  step: 0.01}
+        - {label: "Price", name: "price", widget: "number"}
         - {label: "Description", name: "description", widget: "markdown", required: false}
         - {label: "Featured Image", name: "featured-image", widget: "image", comment: "Supported file formats: png"}
         - {label: "Extra images", name: "extra-images", widget: "list", summary: '{{fields.image}}', field: {label: "Extra image", name: "extra-image", widget: image}, required: false }
