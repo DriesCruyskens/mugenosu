@@ -16,7 +16,7 @@ collections:
       fields:
         - {label: "Title", name: "title", widget: "string"}
         - {label: "Publish Date", name: "date", widget: "datetime", required: false}
-        - {label: "Description", name: "description", widget: "string", required: false}
+        - {label: "Description", name: "description", widget: "markdown", required: false}
         - {label: "Featured Image", name: "featured-image", widget: "image", comment: "Supported file formats: png"}
         - {label: "Extra images", name: "extra-images", widget: "list", summary: '{{fields.image}}', field: {label: "Extra image", name: "extra-image", widget: image} }
     - name: "sketch" # Used in routes, e.g., /admin/collections/blog
