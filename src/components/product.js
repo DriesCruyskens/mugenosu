@@ -55,12 +55,13 @@ const ProductInfo = styled.div`
 const Product = props => {
     return (
         <ProductCard>
-            {props.fluid &&
-                <StyledImg
-                    imgStyle={{ objectFit: "contain" }}
-                    fluid={props.fluid}
-                    alt={props.dataItemName + " image"} />}
-
+            <Link to={props.slug}>
+                {props.fluid &&
+                    <StyledImg
+                        imgStyle={{ objectFit: "contain" }}
+                        fluid={props.fluid}
+                        alt={props.dataItemName + " image"} />}
+            </Link>
             <ProductInfo>
                 <ProductTitle>{props.frontmatter.title}</ProductTitle>
 

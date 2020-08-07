@@ -28,7 +28,8 @@ const ShopPage = props => {
           return (
             <Product
               frontmatter={node.frontmatter}
-              fluid={node.frontmatter.featured_image.childImageSharp.fluid}>
+              fluid={node.frontmatter.featured_image.childImageSharp.fluid}
+              slug={node.fields.slug}>
               Add to cart
             </Product>)
         })}
@@ -42,6 +43,9 @@ export const query = graphql`
     allMarkdownRemark(filter: {fields: {sourceName: {eq: "products"}}}, sort: {fields: [frontmatter___date], order: DESC}) {
       edges {
         node {
+          fields {
+            slug
+          }
           html
           frontmatter {
             title
