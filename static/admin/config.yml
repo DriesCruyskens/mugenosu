@@ -12,7 +12,7 @@ collections:
       label: "product"
       folder: "src/content/products"
       create: true
-      slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+      slug: "{{title}}"
       fields:
         - {label: "Title", name: "title", widget: "string"}
         - {label: "Sold", name: "sold", widget: "boolean"}
