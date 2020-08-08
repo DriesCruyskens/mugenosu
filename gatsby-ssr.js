@@ -5,7 +5,7 @@ require("dotenv").config({
 
 exports.onRenderBody = ({ setPostBodyComponents }, options) => {
 	if(!process.env.SNIPCART_API_KEY){
-		console.log('No Snipcart API key environment variable found.')
+		Error('No Snipcart API key environment variable found.')
 		return
     }
 
