@@ -28,7 +28,6 @@ const ShopPage = props => {
           return (
             <Product
               frontmatter={node.frontmatter}
-              fluid={node.frontmatter.featured_image.childImageSharp.fluid}
               slug={node.fields.slug}>
               Add to cart
             </Product>)

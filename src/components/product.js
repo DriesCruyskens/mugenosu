@@ -56,10 +56,10 @@ const Product = props => {
     return (
         <ProductCard>
             <Link to={props.slug}>
-                {props.fluid &&
+                {props.frontmatter.featured_image.childImageSharp.fluid &&
                     <StyledImg
                         imgStyle={{ objectFit: "contain" }}
-                        fluid={props.fluid}
+                        fluid={props.frontmatter.featured_image.childImageSharp.fluid}
                         alt={props.dataItemName + " image"} />}
             </Link>
             <ProductInfo>
@@ -76,7 +76,7 @@ const Product = props => {
                         data-item-price={props.frontmatter.price}
                         data-item-url="https://deploy-preview-32--condescending-neumann-452934.netlify.app/shop/"
                         data-item-description={props.frontmatter.description}
-                        data-item-image={props.fluid.src}
+                        data-item-image={props.frontmatter.featured_image.childImageSharp.fluid.src}
                         data-item-name={props.frontmatter.title}>
                         Add to cart
                     </AddToCartButton>
