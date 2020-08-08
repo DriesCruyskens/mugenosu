@@ -24,11 +24,11 @@ const ShopPage = props => {
     <Layout>
       <SEO title="Shop" />
       <ProductWrapper>
-        {props.data.allMarkdownRemark.edges.map(({ node }) => {
+        {props.data.allMarkdownRemark.edges.map(({ node }, index) => {
           return (
             <Product
               frontmatter={node.frontmatter}
-              slug={node.fields.slug}>
+              slug={node.fields.slug} key={index}>
               Add to cart
             </Product>)
         })}
