@@ -6,7 +6,7 @@ exports.onRenderBody = ({ setPostBodyComponents }, options) => {
     }
 
 	const components = [
-		<div id="snipcart" data-api-key={process.env.SNIPCART_API_KEY} data-config-add-product-behavior="none" hidden>
+		<div id="snipcart" data-api-key={process.env.GATSBY_SNIPCART_API_KEY} data-config-add-product-behavior="none" hidden>
         </div>
     ]
 
