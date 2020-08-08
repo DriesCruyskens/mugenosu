@@ -15,7 +15,7 @@ const ProductWrapper = styled.div`
   column-gap: 50px;
 
   @media (max-width: 500px) {
-    padding-top: 50px
+    padding: 50px 0 50px 0;
   }
 `
 
