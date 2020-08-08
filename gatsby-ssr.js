@@ -1,11 +1,7 @@
 const React = require("react")
-require("dotenv").config({
-    path: `.env.${process.env.NODE_ENV}`,
-  })
 
 exports.onRenderBody = ({ setPostBodyComponents }, options) => {
-	if(!process.env.SNIPCART_API_KEY){
-        console.log('No Snipcart API key environment variable found.')
+	if(!process.env.GATSBY_SNIPCART_API_KEY){
 		throw new Error('No Snipcart API key environment variable found.')
     }
 

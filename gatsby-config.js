@@ -1,13 +1,13 @@
-require("dotenv").config({
+require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
-})
+});
 
 module.exports = {
   siteMetadata: {
     title: `Mugenosu`,
     description: `Generative drawings`,
     author: `@driescruyskens`,
-    siteUrl: process.env.SITE_URL
+    siteUrl: process.env.GATSBY_SITE_URL
   },
   plugins: [
     {
