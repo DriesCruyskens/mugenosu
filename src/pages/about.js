@@ -3,6 +3,7 @@ import Layout from '../components/layout'
 import SEO from '../components/seo'
 import styled from 'styled-components'
 import ReactMarkdown from 'react-markdown'
+import { graphql } from 'gatsby'
 
 const Content = styled.section`
     display: flex;
