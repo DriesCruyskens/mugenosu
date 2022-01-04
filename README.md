@@ -5,4 +5,4 @@ Website for personal generative sketches.
 [https://mugenosu.xyz](https://mugenosu.xyz/)
 
 ### Stack
-Gatsby.js, React, Netlify
+Gatsby.js, React, Netlify CMS
