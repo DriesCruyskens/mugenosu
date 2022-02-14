@@ -2,7 +2,7 @@
 
 Website for personal generative sketches.
 
-[https://mugenosu.xyz](https://mugenosu.ink/)
+[https://mugenosu.ink](https://mugenosu.ink/)
 
 ### Stack
 Gatsby.js, React, Netlify CMS
