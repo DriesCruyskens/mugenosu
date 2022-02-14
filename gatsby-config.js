@@ -3,7 +3,7 @@ module.exports = {
     title: `Mugenosu`,
     description: `Generative drawings`,
     author: `@driescruyskens`,
-    siteUrl: 'https://mugenosu.xyz'
+    siteUrl: 'https://mugenosu.ink'
   },
   plugins: [
     {
