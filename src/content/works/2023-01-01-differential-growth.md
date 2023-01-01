@@ -1,6 +1,6 @@
 ---
 title: Differential Growth
-date: 2023-01-01T10:14:09.840Z
+date: 2023-01-01T10:36:01.398Z
 description: Differential Line Growth algorithm written in rust and adapted for
   the browser using WebAssembly.
 # Supported file formats: png
